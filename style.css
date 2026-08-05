@@ -269,3 +269,10 @@ a.col:hover .more{transform:translateX(6px)}
   .division .d-img{border-right:0;border-bottom:var(--rule);min-height:230px;max-height:280px}
   .division.flip .d-img{order:0;border-left:0}
 }
+
+/* ---------- calendly ---------- */
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn-row .btn{margin-top:0}
+.book{border-bottom:var(--rule)}
+.book-inner{padding:clamp(28px,4vw,48px) var(--pad)}
+.calendly-inline-widget{border:var(--rule);background:#fff}
