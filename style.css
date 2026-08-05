@@ -199,7 +199,7 @@ footer{background:var(--ink);color:var(--paper-cool);margin-top:auto}
 /* hero dominates; supporting text recedes */
 .hero-l h1{font-size:clamp(42px,5.4vw,80px);font-weight:800}
 .hero-l p{font-size:15.5px}
-.hero-field{background:linear-gradient(135deg,var(--blue-deep) 0%,#1D5799 70%,var(--blue-mid) 100%)}
+.hero-field{background:linear-gradient(180deg,rgba(6,20,37,.05) 30%,rgba(6,20,37,.78) 100%),url('assets/hero-doctors.jpg') center/cover no-repeat}
 .meta strong{font-size:22px}
 
 /* primary actions: hard offset shadow = the one thing to press */
@@ -247,4 +247,25 @@ a.col:hover .more{transform:translateX(6px)}
   .reveal{opacity:1;transform:none;transition:none}
   .stamp{animation:none}
   .btn,.col,.hero-list a span:last-child{transition:none}
+}
+
+/* ---------- division rows (image + plain language) ---------- */
+.division{display:grid;grid-template-columns:1fr 1.1fr;border-bottom:var(--rule)}
+.division .d-img{border-right:var(--rule);overflow:hidden;min-height:380px}
+.division .d-img img{width:100%;height:100%;object-fit:cover;display:block}
+.division.flip .d-img{order:2;border-right:0;border-left:var(--rule)}
+.d-body{padding:clamp(36px,5vw,60px) 40px clamp(36px,5vw,56px)}
+.d-body .n{font-size:12px;font-weight:700;color:var(--blue-mid);letter-spacing:.08em}
+.d-body h3{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin:14px 0 12px}
+.d-lead{font-size:15.5px;color:var(--gray);line-height:1.65;max-width:52ch}
+.d-who{margin-top:16px;font-size:13.5px;background:var(--tint);display:inline-block;padding:8px 14px;color:var(--blue-deep);line-height:1.5}
+.d-who strong{font-weight:750}
+.d-list{list-style:none;margin:18px 0 28px;max-width:52ch}
+.d-list li{padding:11px 0 11px 30px;position:relative;font-size:14.5px;font-weight:600;border-top:1px solid #E3E0DA}
+.d-list li:first-child{border-top:0}
+.d-list li::before{content:"✓";position:absolute;left:2px;color:var(--blue-mid);font-weight:800}
+@media(max-width:860px){
+  .division{grid-template-columns:1fr}
+  .division .d-img{border-right:0;border-bottom:var(--rule);min-height:230px;max-height:280px}
+  .division.flip .d-img{order:0;border-left:0}
 }

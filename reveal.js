@@ -12,7 +12,8 @@
 
   var els = document.querySelectorAll(
     '.hero-l > *, .hero-list a, .hero-field, .meta > div, .sec-head, .col, .row, .cell,' +
-    '.band-l > *, .band-r .item, .contact-l > *, .contact-r, .page-hero-l > *, .page-hero-r'
+    '.band-l > *, .band-r .item, .contact-l > *, .contact-r, .page-hero-l > *, .page-hero-r,' +
+    '.d-img, .d-body > *'
   );
 
   var io = new IntersectionObserver(function (entries) {
