@@ -187,3 +187,64 @@ footer{background:var(--ink);color:var(--paper-cool);margin-top:auto}
 .foot-col a:hover{color:var(--paper-cool)}
 .foot-bottom{padding:18px 40px;font-size:12.5px;color:var(--gray-lt);border-top:1px solid rgba(252,253,254,.18);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr}.foot-col+.foot-col{border-left:0;border-top:1px solid rgba(252,253,254,.18)}}
+
+/* ============================================================
+   DEPTH · HIERARCHY · MOTION
+   ============================================================ */
+
+/* nav gains elevation once the page scrolls */
+.nav{transition:box-shadow .25s ease}
+.nav.scrolled{box-shadow:0 10px 30px rgba(6,20,37,.10)}
+
+/* hero dominates; supporting text recedes */
+.hero-l h1{font-size:clamp(42px,5.4vw,80px);font-weight:800}
+.hero-l p{font-size:15.5px}
+.hero-field{background:linear-gradient(135deg,var(--blue-deep) 0%,#1D5799 70%,var(--blue-mid) 100%)}
+.meta strong{font-size:22px}
+
+/* primary actions: hard offset shadow = the one thing to press */
+.btn{box-shadow:4px 4px 0 rgba(6,20,37,.92);transform:translate(0,0);transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s cubic-bezier(.22,.61,.36,1),background .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(6,20,37,.92)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(6,20,37,.92)}
+.btn.ghost{box-shadow:none}
+.btn.ghost:hover{transform:none;box-shadow:none}
+
+/* section heads: numbered chip anchors the eye */
+.sec-head{background:var(--paper)}
+.sec-head .n{border:1.5px solid var(--blue-mid);padding:4px 10px;font-size:12px}
+.sec-head h2{font-weight:800}
+
+/* division columns invite the click */
+.cols{background:#fff}
+.col{transition:background .25s ease}
+a.col:hover{background:var(--tint)}
+a.col:hover h3{color:var(--blue-deep)}
+.col .more{transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+a.col:hover .more{transform:translateX(6px)}
+.col h3{transition:color .2s}
+
+/* hero list arrows slide */
+.hero-list a span:last-child{transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+.hero-list a:hover span:last-child{transform:translateX(5px)}
+
+/* navy surfaces get dimension */
+.band{background:linear-gradient(120deg,var(--blue-deep) 0%,#1D5799 100%)}
+.contact-l{background:linear-gradient(150deg,var(--blue-deep) 0%,#123A69 100%)}
+.page-hero-r{background:linear-gradient(150deg,var(--blue-deep) 0%,#1D5799 100%)}
+.page-hero-r.tint{background:var(--tint)}
+.page-hero-r.dark{background:linear-gradient(150deg,var(--ink) 0%,#0C2038 100%)}
+.contact-r form{background:#fff;border:var(--rule);padding:28px;box-shadow:8px 8px 0 rgba(25,74,131,.15)}
+.contact-r .btn{box-shadow:4px 4px 0 rgba(6,20,37,.92)}
+
+/* stamp: alive, gently */
+@keyframes stampFloat{from{transform:rotate(12deg) translateY(0)}to{transform:rotate(8deg) translateY(-7px)}}
+.stamp{animation:stampFloat 5s ease-in-out infinite alternate}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .stamp{animation:none}
+  .btn,.col,.hero-list a span:last-child{transition:none}
+}
