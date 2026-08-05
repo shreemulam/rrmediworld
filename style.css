@@ -35,8 +35,9 @@ main{flex:1}
 
 /* ---------- nav (simple) ---------- */
 .nav{display:flex;align-items:center;gap:32px;border-bottom:var(--rule);height:64px;padding:0 var(--pad);position:sticky;top:0;background:var(--paper);z-index:50}
-.nav .logo{font-weight:750;font-size:17px;letter-spacing:-0.01em}
+.nav .logo{font-weight:750;font-size:17px;letter-spacing:-0.01em;display:flex;align-items:center}
 .nav .logo .rr{color:var(--blue-mid);font-weight:800}
+.nav .logo img{height:32px;width:auto}
 .nav .links{display:flex;gap:28px;margin-left:8px}
 .nav .links a{font-size:14px;font-weight:600;color:var(--gray);transition:color .15s}
 .nav .links a:hover{color:var(--ink)}
@@ -176,8 +177,9 @@ mark{background:var(--blue-bright);color:#fff;padding:0 10px}
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:var(--paper-cool);margin-top:auto}
 .foot-top{display:flex;align-items:center;justify-content:space-between;padding:30px var(--pad);border-bottom:1px solid rgba(252,253,254,.18);gap:20px;flex-wrap:wrap}
-.foot-top .logo{font-weight:750;font-size:18px}
+.foot-top .logo{font-weight:750;font-size:18px;display:flex;align-items:center}
 .foot-top .logo .rr{color:var(--blue-bright)}
+.foot-top .logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
 .foot-top .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-lt)}
 .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .foot-col{padding:28px var(--pad) 36px;font-size:14px;line-height:2;color:var(--gray-lt)}
@@ -274,7 +276,7 @@ a.col:hover .more{transform:translateX(6px)}
 .btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
 .btn-row .btn{margin-top:0}
 .book{border-bottom:var(--rule)}
-.book-inner{padding:clamp(28px,4vw,48px) var(--pad)}
+.book-inner{padding:clamp(28px,4vw,48px) var(--pad);display:flex;flex-direction:column;align-items:center;text-align:center}
 .book-embed{width:100%;max-width:960px;height:620px;border:var(--rule);background:#fff;display:block}
 @media(max-width:760px){.book-embed{height:720px}}
 .book-fallback{margin-top:14px;font-size:13.5px;color:var(--gray)}
